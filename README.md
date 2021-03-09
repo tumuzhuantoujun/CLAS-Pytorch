@@ -7,6 +7,13 @@ This is an official implementation of "[Temporal-consistent segmentation of echo
 # Method (CLAS)
 ![CLAS](https://github.com/HongrongWei/CLAS-Pytorch/blob/main/misc/CLAS.jpg)
 
+# Visualization of temporal consistency
+![a2c_im](https://github.com/HongrongWei/CLAS-Pytorch/blob/main/misc/Pat44_A2C_images.gif)
+![a2c_seg](https://github.com/HongrongWei/CLAS-Pytorch/blob/main/misc/Pat44_A2C_segmentation.gif)
+
+![a4c_im](https://github.com/HongrongWei/CLAS-Pytorch/blob/main/misc/Pat44_A4C_images.gif)
+![a4c_seg](https://github.com/HongrongWei/CLAS-Pytorch/blob/main/misc/Pat44_A4C_segmentation.gif)
+
 # Results (SOTA)
 * **Cardiac** (endocardium, epicardium, and left atrium) **segmentation**
 

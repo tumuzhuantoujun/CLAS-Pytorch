@@ -1,6 +1,7 @@
 import numpy as np
 import SimpleITK as sitk
 from skimage.transform import resize
+from PIL import Image
 
 def read_sequences_ED_ES_frame(img_dir = './data/training/patient', pat_num = 450):
 
@@ -44,8 +45,6 @@ def resize_images(imgs, target_shape):
     for i in range(C):
         re_imgs[i, :, :] = resize(imgs[i, :, :], output_shape = (H, W), order=1, mode='constant', preserve_range=True, anti_aliasing=True)
     return re_imgs
-
-
 
 
 
