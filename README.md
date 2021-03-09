@@ -5,7 +5,7 @@ This is an official implementation of "[Temporal-consistent segmentation of echo
 [Cardiac Acquisitions for Multi-structure Ultrasound Segmentation, CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/index.html)
 
 # Method (CLAS)
-![CLAS](https://github.com/HongrongWei/CLAS-pytorch/blob/main/CLAS.jpg)
+![CLAS](https://github.com/HongrongWei/CLAS-Pytorch/blob/main/misc/CLAS.jpg)
 
 # Results (SOTA)
 * **Cardiac** (endocardium, epicardium, and left atrium) **segmentation**
