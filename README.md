@@ -24,7 +24,7 @@ This is an official implementation of "**Temporal-consistent segmentation of ech
 
 | Methods       | Endo           |        |             | Epi        |     |            | LA          |      |           |
 |:-------------:|:--------------:|:------:|:-----------:|:----------:|:---:|:----------:|:-----------:|:----:|:---------:|
-| ED phase[^Note1]      | Dice           | HD[^Note2]     | MAD[^Note3]         | Dice       | HD  | MAD        | Dice        | HD   | MAD       |
+| ED phase^[Note1]      | Dice           | HD[^Note2]     | MAD[^Note3]         | Dice       | HD  | MAD        | Dice        | HD   | MAD       |
 | [U-Net](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6) | 0.936 | 5.3  | 1.7 | 0.956 | 5.2 | 1.7 | 0.889 | 5.7  | 2.2 |
 | [ACNNs](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6) | 0.936 | 5.6  | 1.7 | 0.953 | 5.9 | 1.9 | 0.881 | 6.0  | 2.3 |
 | CLAS    | 0.947 | 4.6 | 1.4 | 0.961 | 4.8 | 1.5 | 0.902 | 5.2 | 1.9 |
