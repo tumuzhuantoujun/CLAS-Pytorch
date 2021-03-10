@@ -28,7 +28,7 @@ This is an official implementation of "**Temporal-consistent segmentation of ech
 | [U-Net](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6) | 0.936 | 5.3  | 1.7 | 0.956 | 5.2 | 1.7 | 0.889 | 5.7  | 2.2 |
 | [ACNNs](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6) | 0.936 | 5.6  | 1.7 | 0.953 | 5.9 | 1.9 | 0.881 | 6.0  | 2.3 |
 | CLAS    | 0.947 | 4.6 | 1.4 | 0.961 | 4.8 | 1.5 | 0.902 | 5.2 | 1.9 |
-| ES phase[^Note1]  | Dice           | HD    | MAD | Dice           | HD    | MAD    | Dice           | HD           | MAD          |
+| ES phase  | Dice           | HD    | MAD | Dice           | HD    | MAD    | Dice           | HD           | MAD          |
 | [U-Net](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6)   | 0.912   | 5.5    | 1.7  | 0.946  | 5.7  | 1.9  | 0.918 | 5.3 | 2.0  |
 | [ACNNs](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6)   | 0.913   | 5.6    | 1.7  | 0.945  | 5.9  | 2.0  | 0.911 | 5.8 | 2.2  |
 | CLAS     | 0.929 | 4.6 | 1.4 | 0.955 | 4.9 | 1.6 | 0.927 | 4.8 | 1.8 |
@@ -41,12 +41,12 @@ This is an official implementation of "**Temporal-consistent segmentation of ech
 
 | Methods            | EDV           |          |      | ESV            |          |      | EF             |          |     |
 |:------------------:|:-------------:|:--------:|:----:|:--------------:|:--------:|:----:|:--------------:|:--------:|:---:|
-|                    | corr[^Note4]          | bias(ml) | std  | corr           | bias(ml) | std  | corr           | bias(\%) | std |
+|                    | corr          | bias(ml) | std  | corr           | bias(ml) | std  | corr           | bias(\%) | std |
 | [U-Net](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6)  | 0.926 | 7.2 | 15.6 | 0.960  | 4.4  | 10.2 | 0.845  | 0.1 | 7.3 |
 | [ACNNs](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6)  | 0.928 | 2.8 | 15.5 | 0.954  | 2.0  | 10.1 | 0.807  | 0.3 | 8.3 |
 | CLAS  | 0.958  | -0.7 | 15.1   | 0.979   | -0.0     | 8.4  | 0.926  | -0.1 | 6.7 |
 
-[^Note4]: Pearson Correlation Coefficient
+Note: corr (Pearson Correlation Coefficient)
 
 # Citation
 Please cite our paper if you find anything helpful:
