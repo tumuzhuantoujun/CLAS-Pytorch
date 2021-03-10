@@ -1,37 +1,32 @@
 import numpy as np
 import SimpleITK as sitk
 from skimage.transform import resize
-from PIL import Image
 
-def read_sequences_ED_ES_frame(img_dir = './data/training/patient', pat_num = 450):
+def read_seq_info_EDESframe(info_dir):
+    '''
+    :param info_dir:
+    :return: [ED_frame, ES_frame, N_frame]
+    '''
+    info = (open(info_dir, 'r')).read().split('\n')
+    EDESframe = np.zeros((3,), dtype=np.int16)
+    for i in range(3):
+        EDESframe[i] = int(info[i].split(': ')[-1])
+    return EDESframe
 
-    ch2_ED_ES = np.zeros((pat_num, 3),dtype=np.float32)
-    ch4_ED_ES = np.zeros((pat_num, 3),dtype=np.float32)
+def read_A2CA4C_EDESframe(img_dir, pat_num = 450):
+    A2C_EDESframe_pat = np.zeros((pat_num, 3), dtype=np.int16)
+    A4C_EDESframe_pat = np.zeros((pat_num, 3), dtype=np.int16)
     for i in range(pat_num):
         if i < 9: pat = '000' + str(i + 1)
         elif i < 99: pat = '00' + str(i + 1)
         else: pat = '0' + str(i + 1)
         # Chamber 2
         CH2_dir = img_dir + pat + '/Info_2CH.cfg'
-        info = (open(CH2_dir, 'r')).read().split('\n')
-        ED_frame = int(info[0][3:])
-        ES_frame = int(info[1][3:])
-        N_frame = int(info[2][8:])
-        ch2_ED_ES[i, 0] = ED_frame
-        ch2_ED_ES[i, 1] = ES_frame
-        ch2_ED_ES[i, 2] = N_frame
-
+        A2C_EDESframe_pat[i] = read_seq_info_EDESframe(CH2_dir)
         # Chamber 4
         CH4_dir = img_dir + pat + '/Info_4CH.cfg'
-        info = (open(CH4_dir, 'r')).read().split('\n')
-        ED_frame = int(info[0][3:])
-        ES_frame = int(info[1][3:])
-        N_frame = int(info[2][8:])
-        ch4_ED_ES[i, 0] = ED_frame
-        ch4_ED_ES[i, 1] = ES_frame
-        ch4_ED_ES[i, 2] = N_frame
-
-    return ch2_ED_ES, ch4_ED_ES
+        A4C_EDESframe_pat[i] = read_seq_info_EDESframe(CH4_dir)
+    return A2C_EDESframe_pat, A4C_EDESframe_pat
 
 def resize_images(imgs, target_shape):
     '''
@@ -46,23 +41,14 @@ def resize_images(imgs, target_shape):
         re_imgs[i, :, :] = resize(imgs[i, :, :], output_shape = (H, W), order=1, mode='constant', preserve_range=True, anti_aliasing=True)
     return re_imgs
 
-
-
-
-
-def read_select_resize_test_sequences(pat_split, ch2_ED_ES_inverse_id, ch4_ED_ES_inverse_id):
-    img_dir = './data/testing/testing/patient'
-
-    pat_num = 50
-    ch2 = np.zeros((pat_num,10,256,256),dtype=np.float32)
-    ch4 = np.zeros((pat_num,10,256,256),dtype=np.float32)
-    # select 10 sequences and resize image to 256 * 256
+def read_preprocess_sequences(img_dir, pat_num=450):
+    ch2 = np.zeros((pat_num, 10, 256, 256),dtype=np.float32)
+    ch4 = np.zeros((pat_num, 10, 256, 256),dtype=np.float32)
+    # temporal down sampling (10 frames)
     for i in range(pat_num):
-        pat_id = pat_split[i]
-        if pat_id < 9:
-            pat = '000' + str(pat_id + 1)
-        elif pat_id < 99:
-            pat = '00' + str(pat_id + 1)
+        if i < 9: pat = '000' + str(i + 1)
+        elif i < 99: pat = '00' + str(i + 1)
+        else: pat = '0' + str(i + 1)
         # Chamber 2
         CH2_dir = img_dir + pat + '/patient' + pat + '_2CH_sequence.mhd'
         CH2_image = sitk.ReadImage(CH2_dir)
@@ -103,3 +89,6 @@ def read_select_resize_test_sequences(pat_split, ch2_ED_ES_inverse_id, ch4_ED_ES
             ch4_s = np.flipud(ch4_s)
         ch4[i,] = resize_images(ch4_s, [256, 256])
     return ch2, ch4
+
+if __name__ == '__main__':
+    A2C_EDESframe, A4C_EDESframe = read_A2CA4C_EDESframe('../data/training/patient')
