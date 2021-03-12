@@ -32,6 +32,7 @@ This is an official implementation of "**Temporal-consistent segmentation of ech
 | [U-Net](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6)   | 0.912   | 5.5    | 1.7  | 0.946  | 5.7  | 1.9  | 0.918 | 5.3 | 2.0  |
 | [ACNNs](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6)   | 0.913   | 5.6    | 1.7  | 0.945  | 5.9  | 2.0  | 0.911 | 5.8 | 2.2  |
 | CLAS     | 0.929 | 4.6 | 1.4 | 0.955 | 4.9 | 1.6 | 0.927 | 4.8 | 1.8 |
+
 Note: ED & ES: end-diastole and end-systole phases;
 HD: Hausdorff distance;
 MAD: Mean absolute distance
