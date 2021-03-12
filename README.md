@@ -1,4 +1,4 @@
-# CLAS-pytorch
+# CLAS-pytorch (Unfinished)
 This is an official implementation of "**Temporal-consistent segmentation of echocardiography with co-learning from appearance and shape**" (MICCAI 2020 early accept, Oral)
 
 [[Paper]](https://www.researchgate.net/publication/342520911_Temporal-consistent_Segmentation_of_Echocardiography_with_Co-learning_from_Appearance_and_Shape)
@@ -24,7 +24,7 @@ This is an official implementation of "**Temporal-consistent segmentation of ech
 
 | Methods       | Endo           |        |             | Epi        |     |            | LA          |      |           |
 |:-------------:|:--------------:|:------:|:-----------:|:----------:|:---:|:----------:|:-----------:|:----:|:---------:|
-| ED phase^[Note1]      | Dice           | HD[^Note2]     | MAD[^Note3]         | Dice       | HD  | MAD        | Dice        | HD   | MAD       |
+| ED phase      | Dice           | HD     | MAD         | Dice       | HD  | MAD        | Dice        | HD   | MAD       |
 | [U-Net](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6) | 0.936 | 5.3  | 1.7 | 0.956 | 5.2 | 1.7 | 0.889 | 5.7  | 2.2 |
 | [ACNNs](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6) | 0.936 | 5.6  | 1.7 | 0.953 | 5.9 | 1.9 | 0.881 | 6.0  | 2.3 |
 | CLAS    | 0.947 | 4.6 | 1.4 | 0.961 | 4.8 | 1.5 | 0.902 | 5.2 | 1.9 |
@@ -32,10 +32,9 @@ This is an official implementation of "**Temporal-consistent segmentation of ech
 | [U-Net](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6)   | 0.912   | 5.5    | 1.7  | 0.946  | 5.7  | 1.9  | 0.918 | 5.3 | 2.0  |
 | [ACNNs](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6)   | 0.913   | 5.6    | 1.7  | 0.945  | 5.9  | 2.0  | 0.911 | 5.8 | 2.2  |
 | CLAS     | 0.929 | 4.6 | 1.4 | 0.955 | 4.9 | 1.6 | 0.927 | 4.8 | 1.8 |
-
-[^Note1]: end-diastole and end-systole phases
-[^Note2]: Hausdorff distance
-[^Note3]: Mean absolute distance
+Note: ED & ES: end-diastole and end-systole phases;
+HD: Hausdorff distance;
+MAD: Mean absolute distance
       
 * **Volumes** (EDV & ESV) and **ejection fraction** (EF) **estimation**
 
@@ -46,7 +45,7 @@ This is an official implementation of "**Temporal-consistent segmentation of ech
 | [ACNNs](http://camus.creatis.insa-lyon.fr/challenge/#phase/5ca211272691fe0a9dac46d6)  | 0.928 | 2.8 | 15.5 | 0.954  | 2.0  | 10.1 | 0.807  | 0.3 | 8.3 |
 | CLAS  | 0.958  | -0.7 | 15.1   | 0.979   | -0.0     | 8.4  | 0.926  | -0.1 | 6.7 |
 
-Note: corr (Pearson Correlation Coefficient)
+Note: corr: Pearson Correlation Coefficient
 
 # Citation
 Please cite our paper if you find anything helpful:
