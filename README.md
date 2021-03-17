@@ -2,7 +2,7 @@
 This is an official implementation of "**Temporal-consistent segmentation of echocardiography with co-learning from appearance and shape**" (MICCAI 2020 early accept, Oral)
 
 [[Paper]](https://www.researchgate.net/publication/342520911_Temporal-consistent_Segmentation_of_Echocardiography_with_Co-learning_from_Appearance_and_Shape)
-[[Slide]](https://app.box.com/s/5fkddoh2wa7ygfj80cjmo70s620wi5sr)
+[[Slide]](https://drive.google.com/file/d/1OHVLLxPKN9B2vqIsOZOrAKf2ZuJzSX92/view?usp=sharing)
 
 # Dataset / Challenge
 [Cardiac Acquisitions for Multi-structure Ultrasound Segmentation, CAMUS](https://www.creatis.insa-lyon.fr/Challenge/camus/index.html)
