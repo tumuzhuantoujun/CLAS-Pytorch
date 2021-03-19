@@ -17,9 +17,7 @@ def read_A2CA4C_EDESframe(img_dir, pat_num = 450):
     A2C_EDESframe_pat = np.zeros((pat_num, 3), dtype=np.int16)
     A4C_EDESframe_pat = np.zeros((pat_num, 3), dtype=np.int16)
     for i in range(pat_num):
-        if i < 9: pat = '000' + str(i + 1)
-        elif i < 99: pat = '00' + str(i + 1)
-        else: pat = '0' + str(i + 1)
+        pat = str(i + 1).zfill(4)
         # Chamber 2
         CH2_dir = img_dir + pat + '/Info_2CH.cfg'
         A2C_EDESframe_pat[i] = read_seq_info_EDESframe(CH2_dir)
@@ -46,9 +44,7 @@ def read_preprocess_sequences(img_dir, pat_num=450):
     ch4 = np.zeros((pat_num, 10, 256, 256),dtype=np.float32)
     # temporal down sampling (10 frames)
     for i in range(pat_num):
-        if i < 9: pat = '000' + str(i + 1)
-        elif i < 99: pat = '00' + str(i + 1)
-        else: pat = '0' + str(i + 1)
+        pat = str(i + 1).zfill(4)
         # Chamber 2
         CH2_dir = img_dir + pat + '/patient' + pat + '_2CH_sequence.mhd'
         CH2_image = sitk.ReadImage(CH2_dir)
